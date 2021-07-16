@@ -1,12 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+
+import {SplashScreen} from './pages';
 
 const App = () => {
-  return (
-    <View>
-      <Text>Instagram Clone Apps</Text>
-    </View>
-  );
+  return <SplashScreen />;
 };
 
 export default App;
