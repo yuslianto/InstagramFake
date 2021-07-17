@@ -1,15 +1,20 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import {IgIcon} from '../../assets';
+import {FbIcon, IgIcon} from '../../assets';
 import {Gap} from '../../components';
 
 const SplashScreen = () => {
   return (
     <View style={styles.page}>
-      <IgIcon />
-      <Gap height={30} />
-      <Text style={styles.text}>Welcome In Instagram</Text>
+      <View style={styles.logo}>
+        <IgIcon />
+      </View>
+      <View style={styles.wrapperIcon}>
+        <Text style={styles.text}>from</Text>
+        <Gap height={-30} />
+        <FbIcon />
+      </View>
     </View>
   );
 };
@@ -19,18 +24,25 @@ export default SplashScreen;
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: 'white',
   },
   logo: {
-    width: '50%',
-    height: '50%',
+    flex: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  wrapperIcon: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
-    fontSize: 40,
+    fontSize: 25,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#828282',
     textAlign: 'center',
+    marginBottom: -30,
   },
 });
