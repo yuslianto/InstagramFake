@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: -50,
   },
   wrapperIcon: {
     flex: 2,
@@ -44,5 +45,6 @@ const styles = StyleSheet.create({
     color: '#828282',
     textAlign: 'center',
     marginBottom: -30,
+    fontFamily: 'Poppins-Light',
   },
 });
