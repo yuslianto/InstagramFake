@@ -1,44 +1,10 @@
 import * as React from 'react';
-import { View, useWindowDimensions, StyleSheet, Text } from 'react-native';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-
+import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { SceneMap, TabBar, TabView } from 'react-native-tab-view';
 import { UserIcon } from '../../assets';
-import { Button, Footer, Gap, TextInput } from '../../components';
-
-const EmailTab = () => {
-  return (
-    <View style={{ flex: 1, width: '100%' }}>
-      <Gap height={15} />
-      <TextInput placeholder={'your email address'} />
-      <Gap height={15} />
-      <Button label={'Next'} />
-    </View>
-  );
-};
-
-const PhoneTab = () => {
-  return (
-    <View style={{ flex: 1, width: '100%' }}>
-      <Gap height={15} />
-      <TextInput placeholder={'Enter your phone number'} />
-      <Gap height={15} />
-      <View>
-        <Text
-          style={{
-            textAlign: 'center',
-            fontSize: 16,
-            fontFamily: 'Poppins-Reguler',
-            color: '#97a8b1',
-          }}>
-          You may receive SMS updates from Instagram and can opt out at any
-          time.
-        </Text>
-      </View>
-      <Gap height={15} />
-      <Button label={'Next'} />
-    </View>
-  );
-};
+import { Footer } from '../../components';
+import { EmailTab } from '../EmailTab';
+import { PhoneTab } from '../PhoneTab';
 
 const TabViewExample = () => {
   const layout = useWindowDimensions();
@@ -71,7 +37,11 @@ const TabViewExample = () => {
                 renderLabel={({ route, color }) => (
                   <Text style={{ color: 'black', margin: 8 }}>{route.title}</Text>
                 )}
-                style={{ backgroundColor: 'white' }}
+                style={{
+                  backgroundColor: 'white',
+                  borderBottomColor: 'black',
+                  borderBottomWidth: 1,
+                }}
                 indicatorStyle={{
                   backgroundColor: 'white',
                   borderBottomColor: 'black',
@@ -82,7 +52,7 @@ const TabViewExample = () => {
             swipeEnabled={false}
             onIndexChange={setIndex}
             sceneContainerStyle={{ backgroundColor: 'white' }}
-            initialLayout={{ width: layout.width }}
+          // initialLayout={{ width: layout.width }}
           />
         </View>
         <View style={styles.footer}>
