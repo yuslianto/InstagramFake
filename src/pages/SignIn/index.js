@@ -1,24 +1,36 @@
 import * as React from 'react';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { SceneMap, TabBar, TabView } from 'react-native-tab-view';
+// import { useNavigation } from '@react-navigation/native';
+
 import { UserIcon } from '../../assets';
 import { Footer } from '../../components';
 import { EmailTab } from '../EmailTab';
 import { PhoneTab } from '../PhoneTab';
 
-const TabViewExample = () => {
-  const layout = useWindowDimensions();
-
+const SignIn = ({ navigation }) => {
+  // const navigation = useNavigation();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'PHONE', title: 'PHONE' },
-    { key: 'EMAIL', title: 'EMAIL' },
+    { key: 'PhoneTab', title: 'PHONE' },
+    { key: 'EmailTab', title: 'EMAIL' },
   ]);
 
-  const renderScene = SceneMap({
-    PHONE: PhoneTab,
-    EMAIL: EmailTab,
-  });
+  const renderScene = ({ route }) => {
+    switch (route.key) {
+      case 'PhoneTab':
+        return <PhoneTab navigation={navigation} />;
+      case 'EmailTab':
+        return <EmailTab navigation={navigation} />;
+      default:
+        return null;
+    }
+  };
+
+  // const renderScene = SceneMap({
+  //   PHONE: PhoneTab,
+  //   EMAIL: EmailTab,
+  // });
 
   return (
     <View style={styles.page}>
@@ -46,17 +58,22 @@ const TabViewExample = () => {
                   backgroundColor: 'white',
                   borderBottomColor: 'black',
                 }}
+                navigation={navigation}
               />
             )}
             renderScene={renderScene}
             swipeEnabled={false}
             onIndexChange={setIndex}
             sceneContainerStyle={{ backgroundColor: 'white' }}
-          // initialLayout={{ width: layout.width }}
+            navigation={navigation}
           />
         </View>
         <View style={styles.footer}>
-          <Footer label={'Already have an account?'} textLink={' Log In.'} />
+          <Footer
+            label={'Already have an account?'}
+            textLink={' Log In.'}
+            onPress={() => navigation.navigate('SignUp')}
+          />
         </View>
       </View>
     </View>
@@ -99,4 +116,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TabViewExample;
+export default SignIn;

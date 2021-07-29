@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Footer = ({ label, textLink }) => {
+const Footer = ({ label, textLink, onPress }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
         {label}
-        <Text style={styles.textLink}>{textLink}</Text>
+        <Text onPress={onPress} style={styles.textLink}>
+          {textLink}
+        </Text>
       </Text>
     </View>
   );

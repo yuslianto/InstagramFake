@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View } from 'react-native';
 import { Button, Gap, TextInput } from '../../components';
 
-const PhoneTab = () => {
+const PhoneTab = ({ navigation, onPress }) => {
   return (
     <View style={{ flex: 1, width: '100%' }}>
       <Gap height={15} />
@@ -21,7 +21,7 @@ const PhoneTab = () => {
         </Text>
       </View>
       <Gap height={15} />
-      <Button label={'Next'} />
+      <Button label={'Next'} onPress={() => navigation.navigate('SignUp')} />
     </View>
   );
 };

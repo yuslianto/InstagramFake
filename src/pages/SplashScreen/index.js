@@ -1,10 +1,16 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-import {FbIcon, IgIcon} from '../../assets';
-import {Gap} from '../../components';
+import { FbIcon, IgIcon } from '../../assets';
+import { Gap } from '../../components';
 
-const SplashScreen = () => {
+const SplashScreen = ({ navigation }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('SignIn');
+    }, 1500);
+  }, []);
+
   return (
     <View style={styles.page}>
       <View style={styles.logo}>
