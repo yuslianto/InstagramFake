@@ -27,11 +27,6 @@ const SignIn = ({ navigation }) => {
     }
   };
 
-  // const renderScene = SceneMap({
-  //   PHONE: PhoneTab,
-  //   EMAIL: EmailTab,
-  // });
-
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -70,8 +65,8 @@ const SignIn = ({ navigation }) => {
         </View>
         <View style={styles.footer}>
           <Footer
-            label={'Already have an account?'}
-            textLink={' Log In.'}
+            label="Already have an account?"
+            textLink=" Log In."
             onPress={() => navigation.navigate('SignUp')}
           />
         </View>

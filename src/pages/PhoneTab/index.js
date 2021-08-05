@@ -21,7 +21,11 @@ const PhoneTab = ({ navigation, onPress }) => {
         </Text>
       </View>
       <Gap height={15} />
-      <Button label={'Next'} onPress={() => navigation.navigate('SignUp')} />
+      <Button
+        label="Next"
+        textColor="white"
+        onPress={() => navigation.navigate('SignUp')}
+      />
     </View>
   );
 };

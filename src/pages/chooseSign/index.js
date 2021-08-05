@@ -1,26 +1,39 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { IgLogo } from '../../assets';
-import { Button, Footer, Header } from '../../components';
+import { Button, Footer, Gap, Header, LineText } from '../../components';
 
-const chooseSign = () => {
+const chooseSign = ({ navigation }) => {
   return (
     <View style={styles.page}>
-      <Header title="English" />
-      <IgLogo style={styles.igLogo} />
-      <View>
-        <Button label="Continue with Facebook" />
-        <Button label="Sign up with email or phone number" />
+      <View style={styles.wrapperHeader}>
+        <Header title="English" />
       </View>
-      <View style={styles.wrapperColOR}>
-        <View style={styles.line} />
-        <View style={styles.wrapperTextOR}>
-          <Text>OR</Text>
+      <View style={styles.wrapperContent}>
+        <Gap height={0} />
+        <IgLogo style={styles.igLogo} />
+        <View style={styles.wrapperButton}>
+          <Button
+            label="Continue with Facebook"
+            textColor="white"
+            onPress={() => navigation.navigate('SignIn')}
+          />
+          <Gap height={40} />
+          <LineText marginBottom={-5} />
+          <Button
+            label="Sign up with email or phone number"
+            color="white"
+            onPress={() => navigation.navigate('SignUp')}
+          />
         </View>
-
-        <View style={styles.line} />
       </View>
-      <Footer label="Already have an account?" textLink="Log in." />
+      <View style={styles.wrapperFooter}>
+        <Footer
+          label="Already have an account?"
+          textLink="Log in."
+          onPress={() => navigation.navigate('SignIn')}
+        />
+      </View>
     </View>
   );
 };
@@ -30,24 +43,25 @@ export default chooseSign;
 const styles = StyleSheet.create({
   page: {
     flex: 1,
+    backgroundColor: 'white',
   },
-  igLogo: {
-    // width: 100,
-    // height: 500,
-  },
-  wrapperColOR: {
-    //flex: 1,
-    height: 50,
-    flexDirection: 'row',
-    justifyContent: 'center',
+  wrapperHeader: {
+    width: '100%',
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  wrapperTextOR: {
-    padding: 5,
+  wrapperContent: {
+    flex: 8,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingHorizontal: 10,
   },
-  line: {
-    borderBottomWidth: 1,
-    borderBottomColor: 'black',
-    width: '45%',
+  wrapperButton: {
+    width: '100%',
+  },
+  wrapperFooter: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
