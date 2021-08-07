@@ -24,7 +24,7 @@ const PhoneTab = ({ navigation, onPress }) => {
       <Button
         label="Next"
         textColor="white"
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => navigation.navigate('confirNumber')}
       />
     </View>
   );
