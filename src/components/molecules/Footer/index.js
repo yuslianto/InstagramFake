@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     color: '#a0a0a0',
     fontSize: 18,
     fontFamily: 'Poppins-Reguler',
+    textAlign: 'center',
   },
   textLink: {
     color: '#14426c',

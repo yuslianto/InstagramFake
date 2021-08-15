@@ -67,7 +67,7 @@ const SignIn = ({ navigation }) => {
           <Footer
             label="Already have an account?"
             textLink=" Log In."
-            onPress={() => navigation.navigate('SignUp')}
+            onPress={() => navigation.reset({ index: 0, routes: [{name: 'MainApp'}]})}
           />
         </View>
       </View>
