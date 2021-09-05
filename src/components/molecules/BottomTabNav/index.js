@@ -84,7 +84,7 @@ const BottomTabNav = ({ state, descriptors, navigation }) => {
             <Icon label={label} focus={isFocused} />
             {/* <IcOrderOn /> */}
             {/* {console.log('label di touchable opacity ', label)} */}
-            <Text>{label}</Text>
+            {/* <Text>{label}</Text> */}
           </TouchableOpacity>
         );
       })}
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 15,
     paddingBottom: 13,
-    paddingHorizontal: 50,
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
   },
 });

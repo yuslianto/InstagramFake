@@ -12,6 +12,10 @@ import IcSearchOn from './Search-On.svg';
 import IcSearchOff from './Search-Off.svg';
 import IcShoppOn from './Shop-On.svg';
 import IcShoppOff from './Shop-Off.svg';
+// import IcBookmark from './Bookmark.svg';
+import IcShare from './Share.svg';
+import IcAdd from './Add.svg';
+import IcLove from './Love.svg';
 
 export {
   IgIcon,
@@ -28,4 +32,7 @@ export {
   IcSearchOff,
   IcShoppOn,
   IcShoppOff,
+  IcShare,
+  IcAdd,
+  IcLove,
 };
